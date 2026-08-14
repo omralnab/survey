@@ -1,8 +1,34 @@
 import type { SurveyQuestion } from "@/types/survey";
 
-export const TOTAL_QUESTIONS = 17;
+export const TOTAL_QUESTIONS = 19;
 
 export const surveyQuestions: SurveyQuestion[] = [
+  {
+    id: "respondentName",
+    type: "text",
+    required: true,
+    title: {
+      ar: "ما اسمك؟",
+      en: "What is your name?",
+    },
+    placeholder: {
+      ar: "اكتب اسمك",
+      en: "Enter your name",
+    },
+  },
+  {
+    id: "shopName",
+    type: "text",
+    required: true,
+    title: {
+      ar: "ما اسم المحل؟",
+      en: "What is the shop name?",
+    },
+    placeholder: {
+      ar: "اكتب اسم المحل",
+      en: "Enter the shop name",
+    },
+  },
   {
     id: "currentPos",
     type: "single",
@@ -950,6 +976,7 @@ export const additionalCommentQuestion: SurveyQuestion = {
   id: "additionalComment",
   type: "text",
   required: false,
+  multiline: true,
   title: {
     ar: "هل هناك شيء مهم في الـ POS لم نسأل عنه؟",
     en: "Is there anything important about POS systems that we didn't ask?",

@@ -24,9 +24,12 @@ export type SurveyQuestion = {
   otherField?: keyof SurveyAnswers;
   otherPlaceholder?: LocalizedString;
   placeholder?: LocalizedString;
+  multiline?: boolean;
 };
 
 export type SurveyAnswers = {
+  respondentName: string;
+  shopName: string;
   currentPos: string;
   currentPosOther: string;
   satisfaction: string;
@@ -56,6 +59,8 @@ export type SurveyAnswers = {
 export type SurveyResponsePayload = {
   createdAt: unknown;
   language: Language;
+  respondentName: string;
+  shopName: string;
   currentPos: string;
   currentPosOther: string;
   satisfaction: string;
@@ -85,6 +90,8 @@ export type SurveyResponsePayload = {
 export type SurveyStep = "intro" | "questions" | "review" | "success";
 
 export const EMPTY_ANSWERS: SurveyAnswers = {
+  respondentName: "",
+  shopName: "",
   currentPos: "",
   currentPosOther: "",
   satisfaction: "",

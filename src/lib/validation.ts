@@ -24,7 +24,7 @@ export function isQuestionAnswered(
     return Array.isArray(value) && value.length > 0;
   }
 
-  return true;
+  return typeof value === "string" && value.trim().length > 0;
 }
 
 export function showsOtherInput(

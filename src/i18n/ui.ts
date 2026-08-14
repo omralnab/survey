@@ -41,8 +41,8 @@ export const uiCopy = {
     en: "Question {current} of {total}",
   },
   requiredError: {
-    ar: "يرجى اختيار إجابة للمتابعة",
-    en: "Please select an answer to continue",
+    ar: "يرجى الإجابة للمتابعة",
+    en: "Please answer this question to continue",
   },
   maxSelectionsError: {
     ar: "يمكنك اختيار حتى {max} خيارات فقط",

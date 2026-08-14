@@ -90,6 +90,9 @@ function normalizeAnswers(raw: unknown): SurveyAnswers {
         : "",
     additionalComment:
       typeof data.additionalComment === "string" ? data.additionalComment : "",
+    respondentName:
+      typeof data.respondentName === "string" ? data.respondentName : "",
+    shopName: typeof data.shopName === "string" ? data.shopName : "",
   };
 }
 

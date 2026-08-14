@@ -146,7 +146,7 @@ export function SurveyApp() {
       const target = event.target as HTMLElement | null;
       const tag = target?.tagName.toLowerCase();
       const isTyping =
-        tag === "input" || tag === "textarea" || target?.isContentEditable;
+        tag === "textarea" || target?.isContentEditable;
 
       if (event.key === "Enter" && !event.shiftKey && !isTyping) {
         event.preventDefault();

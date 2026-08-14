@@ -76,7 +76,7 @@ export function QuestionScreen({
         />
       )}
 
-      {question.type === "text" && (
+      {question.type === "text" && question.multiline && (
         <textarea
           value={typeof value === "string" ? value : ""}
           onChange={(event) => onTextChange(event.target.value)}
@@ -85,6 +85,19 @@ export function QuestionScreen({
           }
           rows={5}
           className="min-h-[160px] w-full resize-none rounded-2xl border border-oco-border bg-white px-4 py-3.5 text-base text-oco-ink outline-none transition placeholder:text-oco-muted/70 focus:border-oco-red focus:ring-2 focus:ring-oco-red/15"
+        />
+      )}
+
+      {question.type === "text" && !question.multiline && (
+        <input
+          type="text"
+          autoComplete={question.id === "respondentName" ? "name" : "organization"}
+          value={typeof value === "string" ? value : ""}
+          onChange={(event) => onTextChange(event.target.value)}
+          placeholder={
+            question.placeholder ? t(question.placeholder, language) : undefined
+          }
+          className="w-full rounded-2xl border border-oco-border bg-white px-4 py-3.5 text-base text-oco-ink outline-none transition placeholder:text-oco-muted/70 focus:border-oco-red focus:ring-2 focus:ring-oco-red/15"
         />
       )}
 
